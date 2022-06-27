@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Touhou MML List</title>
   <link rel="stylesheet" href="normalize.min.css">
+  <link rel="stylesheet" href="/stylesheets/tailwind.css">
   <link rel="stylesheet" href="/stylesheets/main.css">
   <link rel="stylesheet" href="/stylesheets/mml.css">
-  <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
@@ -17,7 +17,7 @@
 <body>
   <div class="content">
 
-    <div id="loading" class="text-center">
+    <div id="loading" class="text-center pb-24">
       <div class="text-2xl">Loading&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;.</div>
       <small class="block text-xs">If it does not load after a while, there might be an error.</small>
     </div>
@@ -25,7 +25,7 @@
     <div id="lists" class="hidden">
       <div class="pb-24">
         <div class="pb-8 font-semibold text-2xl">Touhou Project</div>
-        <table data-list="non-fangame" class="w-full">
+        <table data-list="touhou" class="w-full">
           <thead>
             <tr>
               <th class="text-left"><span class="font-semibold text-sm">Title</span></th>
@@ -39,7 +39,21 @@
       </div>
       <div class="pb-24">
         <div class="pb-8 font-semibold text-2xl">Touhou Fangame</div>
-        <table data-list="fangame" class="w-full">
+        <table data-list="touhou_fangame" class="w-full">
+          <thead>
+            <tr>
+              <th class="text-left"><span class="font-semibold text-sm">Title</span></th>
+              <th class="text-left"><span class="font-semibold text-sm">MML Size</span></th>
+              <th class="text-left"><span class="font-semibold text-sm">PMD Size</span></th>
+              <th class="text-left"><span class="font-semibold text-sm">Last Updated</span></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="pb-24">
+        <div class="pb-8 font-semibold text-2xl">Arranges</div>
+        <table data-list="arranges" class="w-full">
           <thead>
             <tr>
               <th class="text-left"><span class="font-semibold text-sm">Title</span></th>

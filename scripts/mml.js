@@ -39,20 +39,15 @@ function showList() {
 
 function patchListData(res) {
   const group = utils.group(res, 'category');
-  const tableTouhou = document.querySelector('[data-list="non-fangame"]');
-  const tableTouhouTBODY = tableTouhou.querySelector('tbody');
-  const tableFangame = document.querySelector('[data-list="fangame"]');
-  const tableFangameTBODY = tableFangame.querySelector('tbody');
 
-  if (group['touhou'])
-    utils
-      .sortByFilename(group['touhou'])
-      .forEach(data => addRow(tableTouhouTBODY, data));
+  for (const [key, value] of Object.entries(group)) {
+    const tableEl = document.querySelector(`[data-list="${key}"]`);
+    
+    if(tableEl == null) continue;
 
-  if (group['touhou_fangame'])
-    utils
-      .sortByFilename(group['touhou_fangame'])
-      .forEach(data => addRow(tableFangameTBODY, data));
+    const tBodyEl = tableEl.querySelector('tbody');
+    utils.sortByFilename(value).forEach(data => addRow(tBodyEl, data));
+  }
 }
 
 function addRow(tbody, data) {
