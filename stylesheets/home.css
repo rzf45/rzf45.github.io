@@ -1,0 +1,64 @@
+.content {
+  padding-top: 6rem;
+}
+
+.card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 6rem;
+}
+
+.card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.2rem;
+}
+
+.card > img.bg {
+  max-width: 480px;
+}
+
+.card > .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  padding-inline: 2rem;
+  padding-block: 1rem;
+
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  
+  --shadow-x: 1px;
+  --shadow-y: -2px;
+  --shadow-blur: 20px;
+  --shadow-spread: 0px;
+  --shadow-color: hsla(0, 0%, 0%, 0.75);
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-color);
+  -webkit-box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-color);
+  -moz-box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-spread) var(--shadow-color);
+}
+
+.card.card-mml > .title {
+  background-color: #4c1d95;
+  --shadow-color: #4c1d95c0;
+}
+
+.card.card-games > .title {
+  background-color: #1e3a8a;
+  --shadow-color: #1e3a8ac0;
+  pointer-events: none;
+}
+
+/* foot-wrapper is sock, because you wrap your foot with sock */
+.sock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+}
