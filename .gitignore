@@ -1,3 +1,4 @@
+node_modules
 .tailwindcss/
 tailwind.config.js
 build-tailwind.bat
